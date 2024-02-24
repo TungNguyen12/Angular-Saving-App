@@ -1,0 +1,12 @@
+<div>
+  <label for="transaction-type"> </label>
+
+  <input class="amount" placeholder="amount" #transactionAmount />
+  <input class="title" placeholder="title" #transactionTitle />
+  <button
+    type="button"
+    (click)="addTransaction(transactionAmount.value, transactionTitle.value)"
+  >
+    Submit
+  </button>
+</div>
