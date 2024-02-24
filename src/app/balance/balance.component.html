@@ -1,0 +1,8 @@
+<h2>This is Current balance</h2>
+<div>
+  <div>Total: {{ currentBalance }}</div>
+  <input type="text" #amount placeholder="amount" />
+  <button type="button" (click)="transferToSavings(amount.value)">
+    Send to Saving
+  </button>
+</div>

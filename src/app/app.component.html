@@ -9,6 +9,7 @@
   </app-balance>
 
   <!-- Add Income and Expense -->
+  <h2>Transaction</h2>
   <div class="transactions">
     <!-- Income Transaction -->
     <app-transaction
@@ -31,4 +32,13 @@
     (onTransferToBalance)="handleTransferToBalance($event)"
   >
   </app-saving>
+  <div>
+    <ul>
+      <li *ngFor="let transaction of transactions">
+        <span>{{ transaction.amount }}</span>
+        <span>{{ transaction.title }}</span>
+        <span>{{ transaction.type }}</span>
+      </li>
+    </ul>
+  </div>
 </div>

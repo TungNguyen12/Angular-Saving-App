@@ -1,9 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core'
+import { NgIf } from '@angular/common'
+import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core'
+import { FormsModule, NgModel } from '@angular/forms'
 
 @Component({
   selector: 'app-saving',
   standalone: true,
-  imports: [],
+  imports: [NgIf, FormsModule],
   templateUrl: './saving.component.html',
   styleUrl: './saving.component.css',
 })
@@ -18,9 +20,9 @@ export class SavingComponent {
     this.targetAmount = amount
   }
 
-  transferToSaving(amount: number) {
+  transferToBalance(amount: string) {
     if (this.savingAmount > 0) {
-      this.onTransferToBalance.emit(amount)
+      this.onTransferToBalance.emit(Number(amount))
     }
   }
 }

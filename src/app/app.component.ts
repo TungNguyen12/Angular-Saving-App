@@ -23,13 +23,23 @@ import { SavingComponent } from './saving/saving.component'
 export class AppComponent {
   title = 'angular-saving-app'
 
+  transactions: Transaction[] = []
+
   savingAmount: number = 0
 
   currentBalance: number = 0
 
-  handleAddTransaction(transaction: Transaction) {}
+  handleAddTransaction(transaction: Transaction) {
+    this.transactions.push(transaction)
+    console.log(this.transactions)
+  }
 
-  handleTransferToSaving(amount: number) {}
+  handleTransferToSaving(amount: number) {
+    this.savingAmount = this.savingAmount + amount
+    console.log(this.savingAmount)
+  }
 
-  handleTransferToBalance(amount: number) {}
+  handleTransferToBalance(amount: number) {
+    this.currentBalance = this.currentBalance + amount
+  }
 }

@@ -8,13 +8,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core'
   styleUrl: './balance.component.css',
 })
 export class BalanceComponent {
-  @Input() currentBalance: number = 0
+  @Input() currentBalance!: number
 
   @Output() onTransferToSaving = new EventEmitter<number>()
 
-  transferToSavings(amount: number) {
+  transferToSavings(amount: string) {
     if (this.currentBalance >= 0) {
-      this.onTransferToSaving.emit(amount)
+      this.onTransferToSaving.emit(Number(amount))
     }
   }
 }
