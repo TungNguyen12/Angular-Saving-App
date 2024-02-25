@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-saving": {
+      "hosting": {
+        "angular-saving-app": [
+          "angular-saving"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-saving"
+  }
+}
