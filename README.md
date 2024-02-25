@@ -1,3 +1,13 @@
+# Purpose
+
+The purposes of this small application is to:
+
+- Understand Angular Philosophy and Architecture
+- Usage and commands in Angular CLI
+- Deep understanding of Components in Angular
+- Getting familiar with new version of Angular version 17.2.0
+- Working with template and mastering Data Binding
+
 # AngularSavingApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
