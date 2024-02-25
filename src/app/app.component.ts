@@ -1,7 +1,6 @@
 import { Component } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
 import { TransactionComponent } from './transaction/transaction.component'
-import { FormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common'
 import { Transaction } from './transaction/transaction.model'
 import { BalanceComponent } from './balance/balance.component'
@@ -29,17 +28,34 @@ export class AppComponent {
 
   currentBalance: number = 0
 
-  handleAddTransaction(transaction: Transaction) {
-    this.transactions.push(transaction)
-    console.log(this.transactions)
+  handleAddTransaction(t: Transaction) {
+    if (t.type === 'Expense' && this.currentBalance < t.amount) {
+      window.alert('Not enough to execute transaction')
+    } else if (t.type === 'Income') {
+      this.currentBalance += t.amount
+    } else {
+      this.currentBalance -= t.amount
+    }
   }
 
   handleTransferToSaving(amount: number) {
-    this.savingAmount = this.savingAmount + amount
-    console.log(this.savingAmount)
+    if (amount > this.currentBalance) {
+      window.alert(`Not enough Balance to execute transaction`)
+    } else if (this.currentBalance >= amount && amount > 0) {
+      this.currentBalance -= amount
+      this.savingAmount += amount
+    }
+    return this.currentBalance
   }
 
   handleTransferToBalance(amount: number) {
-    this.currentBalance = this.currentBalance + amount
+    console.log(`Amount: ${amount}, Saving Amount: ${this.savingAmount}`)
+    if (amount > this.savingAmount) {
+      console.log(`Not enough balance to execute transaction`)
+      window.alert(`Not enough balance to execute transaction`)
+    } else if (this.savingAmount >= amount && amount > 0) {
+      this.currentBalance += amount
+      this.savingAmount -= amount
+    }
   }
 }
