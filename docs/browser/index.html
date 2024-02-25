@@ -1,13 +1,159 @@
-<!DOCTYPE html><html lang="en" data-critters-container><head>
-  <meta charset="utf-8">
-  <title>AngularSavingApp</title>
-  <base href="/angular-saving-app/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-<style>:root{background-color:#7cfa78}body{display:flex;align-items:center;justify-content:center}
-</style><link rel="stylesheet" href="styles-X2OVXNZD.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-X2OVXNZD.css"></noscript><style ng-app-id="ng">.container[_ngcontent-ng-c4205928097]{display:flex;flex-direction:column;margin:auto;font-family:monospace;align-items:center}h1[_ngcontent-ng-c4205928097]{margin-bottom:0;text-align:center}.transactions[_ngcontent-ng-c4205928097]{display:flex;align-items:center}footer[_ngcontent-ng-c4205928097]{margin-top:40px;text-align:center}</style><style ng-app-id="ng">h2[_ngcontent-ng-c2521463657]{text-align:center;margin-top:50px}</style><style ng-app-id="ng">.transaction[_ngcontent-ng-c3247827241]{display:flex;flex-direction:column}label[_ngcontent-ng-c3247827241]{text-align:center}</style><style ng-app-id="ng">h2[_ngcontent-ng-c2078286325]{text-align:center}</style></head>
-<body><!--nghm-->
-  <app-root _nghost-ng-c4205928097 ng-version="17.2.2" ngh="0" ng-server-context="ssg"><div _ngcontent-ng-c4205928097 class="container"><h1 _ngcontent-ng-c4205928097>Welcome to the Budget App</h1><app-balance _ngcontent-ng-c4205928097 class="app-balance" _nghost-ng-c2521463657 ngh="0"><h2 _ngcontent-ng-c2521463657>Your balance</h2><div _ngcontent-ng-c2521463657><h3 _ngcontent-ng-c2521463657>Total: 0</h3><input _ngcontent-ng-c2521463657 type="text" placeholder="amount"><button _ngcontent-ng-c2521463657 type="button"> Send to Saving </button></div></app-balance><h2 _ngcontent-ng-c4205928097>Transaction</h2><div _ngcontent-ng-c4205928097 class="transactions"><app-transaction _ngcontent-ng-c4205928097 _nghost-ng-c3247827241 ngh="0"><div _ngcontent-ng-c3247827241 class="transaction"><label _ngcontent-ng-c3247827241 for="transaction-type">Income</label><br _ngcontent-ng-c3247827241><input _ngcontent-ng-c3247827241 placeholder="amount" class="amount"><input _ngcontent-ng-c3247827241 placeholder="title" class="title"><button _ngcontent-ng-c3247827241 type="button"> Receive </button></div></app-transaction><app-transaction _ngcontent-ng-c4205928097 _nghost-ng-c3247827241 ngh="0"><div _ngcontent-ng-c3247827241 class="transaction"><label _ngcontent-ng-c3247827241 for="transaction-type">Expense</label><br _ngcontent-ng-c3247827241><input _ngcontent-ng-c3247827241 placeholder="amount" class="amount"><input _ngcontent-ng-c3247827241 placeholder="title" class="title"><button _ngcontent-ng-c3247827241 type="button"> Send </button></div></app-transaction></div><app-saving _ngcontent-ng-c4205928097 _nghost-ng-c2078286325 ngh="0"><div _ngcontent-ng-c2078286325><h2 _ngcontent-ng-c2078286325>Your Saving</h2><div _ngcontent-ng-c2078286325><h3 _ngcontent-ng-c2078286325>Total: 0</h3><input _ngcontent-ng-c2078286325 type="text" placeholder="amount"><button _ngcontent-ng-c2078286325 type="button"> Send to Balance </button></div></div></app-saving></div><footer _ngcontent-ng-c4205928097>Created by Tung Nguyen</footer></app-root>
-<script src="polyfills-RT5I6R6G.js" type="module"></script><script src="main-ULMGQYBT.js" type="module"></script>
+<!DOCTYPE html>
+<html lang="en" data-critters-container>
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularSavingApp</title>
 
-<script id="ng-state" type="application/json">{"__nghData__":[{}]}</script></body></html>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+      :root {
+        background-color: #7cfa78;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="styles-X2OVXNZD.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="styles-X2OVXNZD.css" /></noscript>
+    <style ng-app-id="ng">
+      .container[_ngcontent-ng-c4205928097] {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        font-family: monospace;
+        align-items: center;
+      }
+      h1[_ngcontent-ng-c4205928097] {
+        margin-bottom: 0;
+        text-align: center;
+      }
+      .transactions[_ngcontent-ng-c4205928097] {
+        display: flex;
+        align-items: center;
+      }
+      footer[_ngcontent-ng-c4205928097] {
+        margin-top: 40px;
+        text-align: center;
+      }
+    </style>
+    <style ng-app-id="ng">
+      h2[_ngcontent-ng-c2521463657] {
+        text-align: center;
+        margin-top: 50px;
+      }
+    </style>
+    <style ng-app-id="ng">
+      .transaction[_ngcontent-ng-c3247827241] {
+        display: flex;
+        flex-direction: column;
+      }
+      label[_ngcontent-ng-c3247827241] {
+        text-align: center;
+      }
+    </style>
+    <style ng-app-id="ng">
+      h2[_ngcontent-ng-c2078286325] {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!--nghm-->
+    <app-root
+      _nghost-ng-c4205928097
+      ng-version="17.2.2"
+      ngh="0"
+      ng-server-context="ssg"
+      ><div _ngcontent-ng-c4205928097 class="container">
+        <h1 _ngcontent-ng-c4205928097>Welcome to the Budget App</h1>
+        <app-balance
+          _ngcontent-ng-c4205928097
+          class="app-balance"
+          _nghost-ng-c2521463657
+          ngh="0"
+          ><h2 _ngcontent-ng-c2521463657>Your balance</h2>
+          <div _ngcontent-ng-c2521463657>
+            <h3 _ngcontent-ng-c2521463657>Total: 0</h3>
+            <input
+              _ngcontent-ng-c2521463657
+              type="text"
+              placeholder="amount"
+            /><button _ngcontent-ng-c2521463657 type="button">
+              Send to Saving
+            </button>
+          </div></app-balance
+        >
+        <h2 _ngcontent-ng-c4205928097>Transaction</h2>
+        <div _ngcontent-ng-c4205928097 class="transactions">
+          <app-transaction
+            _ngcontent-ng-c4205928097
+            _nghost-ng-c3247827241
+            ngh="0"
+            ><div _ngcontent-ng-c3247827241 class="transaction">
+              <label _ngcontent-ng-c3247827241 for="transaction-type"
+                >Income</label
+              ><br _ngcontent-ng-c3247827241 /><input
+                _ngcontent-ng-c3247827241
+                placeholder="amount"
+                class="amount"
+              /><input
+                _ngcontent-ng-c3247827241
+                placeholder="title"
+                class="title"
+              /><button _ngcontent-ng-c3247827241 type="button">Receive</button>
+            </div></app-transaction
+          ><app-transaction
+            _ngcontent-ng-c4205928097
+            _nghost-ng-c3247827241
+            ngh="0"
+            ><div _ngcontent-ng-c3247827241 class="transaction">
+              <label _ngcontent-ng-c3247827241 for="transaction-type"
+                >Expense</label
+              ><br _ngcontent-ng-c3247827241 /><input
+                _ngcontent-ng-c3247827241
+                placeholder="amount"
+                class="amount"
+              /><input
+                _ngcontent-ng-c3247827241
+                placeholder="title"
+                class="title"
+              /><button _ngcontent-ng-c3247827241 type="button">Send</button>
+            </div></app-transaction
+          >
+        </div>
+        <app-saving _ngcontent-ng-c4205928097 _nghost-ng-c2078286325 ngh="0"
+          ><div _ngcontent-ng-c2078286325>
+            <h2 _ngcontent-ng-c2078286325>Your Saving</h2>
+            <div _ngcontent-ng-c2078286325>
+              <h3 _ngcontent-ng-c2078286325>Total: 0</h3>
+              <input
+                _ngcontent-ng-c2078286325
+                type="text"
+                placeholder="amount"
+              /><button _ngcontent-ng-c2078286325 type="button">
+                Send to Balance
+              </button>
+            </div>
+          </div></app-saving
+        >
+      </div>
+      <footer _ngcontent-ng-c4205928097>
+        Created by Tung Nguyen
+      </footer></app-root
+    >
+    <script src="polyfills-RT5I6R6G.js" type="module"></script>
+    <script src="main-ULMGQYBT.js" type="module"></script>
+
+    <script id="ng-state" type="application/json">
+      { "__nghData__": [{}] }
+    </script>
+  </body>
+</html>
