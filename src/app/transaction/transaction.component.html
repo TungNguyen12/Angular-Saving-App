@@ -1,13 +1,12 @@
-
-<div>
+<div class="transaction">
   <label for="transaction-type">{{ transactionType }}</label>
-
+  <br />
   <input class="amount" placeholder="amount" #transactionAmount />
   <input class="title" placeholder="title" #transactionTitle />
   <button
     type="button"
     (click)="addTransaction(transactionAmount.value, transactionTitle.value)"
   >
-    Submit
+    {{ transactionType === 'Income' ? 'Receive' : 'Send' }}
   </button>
 </div>
