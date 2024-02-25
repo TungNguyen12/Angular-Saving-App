@@ -8,6 +8,10 @@ The purposes of this small application is to:
 - Getting familiar with new version of Angular version 17.2.0
 - Working with template and mastering Data Binding
 
+# Release
+
+[Visit my deployment](https://saving.tungnguyen.site)
+
 # AngularSavingApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
